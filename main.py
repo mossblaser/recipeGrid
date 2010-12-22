@@ -6,20 +6,20 @@ from generator import generate
 if __name__=="__main__":
 	recipe = generate(
 	"""
-	2 tablespoons butter
-	1 onion, chopped
-	2 large parsnips, peeled and chopped into 1 cm cubes
-	1 clove garlic, finely chopped
-	750ml boiling water
-	1 stock cube
-	2 teaspoons curry powder
-	100ml double cream
-	Salt and pepper
+	6 tsp cocoa powder
+	2 tbsp golden syrup
+	1/2 cup butter
+	1/2 cup sugar
+	16oz digestives
+	bar of chocolate
 	
-	season(stir in(blend (simmer(
-		fry(fry(melt(butter), onion), large parsnips, garlic, curry poweder),
-		mix(boil(water), stock cube)
-	)), creme), salt and pepper)
+	eat(
+		hide(
+			cover(
+				mix(
+					heat until bubbling (cocoa powder, golden syrup, butter, sugar)
+					crush(digestives))
+				melt(bar of chocolate))))
 	""")
 	
 	print recipe
