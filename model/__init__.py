@@ -7,7 +7,7 @@ class Substance(object):
 		if description is not None:
 			self.description = description
 		
-		self.components = components
+		self.components = list(components)
 	
 	
 	def made_from(self, *components):

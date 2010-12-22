@@ -1,36 +1,31 @@
 from model import Substance, Quantity, Ingredient
 from view import results_to_html
 
+from generator import generate
+
 if __name__=="__main__":
-	sugar = Ingredient(Quantity(0.5, "cups"), "sugar")
-	butter = Ingredient(Quantity(0.5, "cups"), "butter")
-	cocoa = Ingredient(Quantity(6, "tsp"), "cocoa powder")
-	syrup = Ingredient(Quantity(2, "tbsp"), "golden syrup")
-	digestives = Ingredient(Quantity(450, "g"), "digestives")
-	chocolate = Ingredient(Quantity(1, "bar"), "chocolate")
+	recipe = generate(
+	"""
+	2 tablespoons butter
+	1 onion, chopped
+	2 large parsnips, peeled and chopped into 1 cm cubes
+	1 clove garlic, finely chopped
+	750ml boiling water
+	1 stock cube
+	2 teaspoons curry powder
+	100ml double cream
+	Salt and pepper
 	
-	sauce = Substance("mix in pan, low heat")
-	sauce.made_from(sugar, butter, cocoa, syrup)
+	season(stir in(blend (simmer(
+		fry(fry(melt(butter), onion), large parsnips, garlic, curry poweder),
+		mix(boil(water), stock cube)
+	)), creme), salt and pepper)
+	""")
 	
-	base = Substance("mix")
-	base.made_from(sauce, digestives)
+	print recipe
 	
-	melted_choc = Substance("melt")
-	melted_choc.made_from(chocolate)
-	
-	tiffin = Substance("cover")
-	tiffin.made_from(base, melted_choc)
-	
-	foo = Ingredient(Quantity(1), "foo")
-	bar = Ingredient(Quantity(1), "bar")
-	
-	jubulated = Substance("jubulate")
-	jubulated.made_from(bar)
-	
-	stuff = Substance("mix")
-	stuff.made_from(foo, jubulated)
-	
-	html = results_to_html([tiffin, stuff])
+	# Produce a table showing how I can produce both!
+	html = results_to_html(recipe)
 	print html
 	
 	open("out.html","w").write(html)
