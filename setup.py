@@ -9,5 +9,6 @@ setup(
 	            "recipeGrid.view",
 	            "recipeGrid.generator"],
 	scripts = ["scripts/recipeGrid",
-	           "scripts/recipeGrid_dir"],
+	           "scripts/recipeGrid_dir",
+	           "scripts/icing"],
 )
