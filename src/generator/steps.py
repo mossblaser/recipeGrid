@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from model import Ingredient, Quantity, Substance
+from recipeGrid.model import Ingredient, Quantity, Substance
 
 
 def multi_find(string, *targets):

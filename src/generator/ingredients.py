@@ -4,7 +4,7 @@
 
 import re
 
-from model import Ingredient, Quantity, Substance
+from recipeGrid.model import Ingredient, Quantity, Substance
 
 
 # A regex which splits up an ingredient from the preperation for that engredient

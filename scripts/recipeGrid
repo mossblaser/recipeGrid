@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-from generator import parse_recipe_file
-from view      import results_to_table
+from recipeGrid.generator import parse_recipe_file
+from recipeGrid.view      import results_to_table
 
 
 def parse_args():

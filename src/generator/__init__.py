@@ -2,9 +2,9 @@
 
 import re
 
-from generator.ingredients import interpret as get_ingredients
-from generator.steps       import interpret as get_recipe
-from generator.serves      import interpret as get_serves
+from recipeGrid.generator.ingredients import interpret as get_ingredients
+from recipeGrid.generator.steps       import interpret as get_recipe
+from recipeGrid.generator.serves      import interpret as get_serves
 
 
 
