@@ -69,7 +69,7 @@ def theme_page(page):
 
 def camel_case_to_sentence_case(string):
 	string, _ , _ = string.partition(".")
-	spaced = re.sub("([A-Z])", " \1", string)
+	spaced = re.sub("([A-Z])", r" \1", string)
 	words = filter(None, spaced.split())
 	
 	for i, word in enumerate(words):
