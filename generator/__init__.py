@@ -17,16 +17,16 @@ def parse_recipe_file(english, scale = None, serve = None):
 	
 	serves = get_serves(title)
 	
+	# Update the title
+	if scale is not None:
+		title += " [Scaled by x%.1f]"%(float(scale))
+	elif serve is not None and serves is not None:
+		title += " [Scaled to serve %d]"%(float(serve))
+	
 	# Modify the value of serves if it is not set to match the requested number of
 	# servings (so the ammounts aren't changed) or to one if the scale is
 	# required.
 	serves = serves if serves is not None else serve if serve is not None else 1
-	
-	# Update the title
-	if scale is not None:
-		title += " [Scaled by x%.1f]"%(float(scale))
-	elif serve is not None:
-		title += " [Scaled to serve %d]"%(float(serve))
 	
 	# The description should be the seocnd (if present)
 	description = "\n\n".join(sections[1:-2]) if len(sections) >= 4 else ""
