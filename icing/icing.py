@@ -68,6 +68,7 @@ def theme_page(page):
 
 
 def camel_case_to_sentence_case(string):
+	string, _ , _ = string.partition(".")
 	spaced = re.sub("([A-Z])", " \1", string)
 	words = filter(None, spaced.split())
 	
@@ -79,8 +80,9 @@ def camel_case_to_sentence_case(string):
 
 
 def setup_directory(directory):
-	subdirectories = [os.path.join(directory, d)
-	                  for d in os.listdir(directory)]
+	subdirectories = filter((lambda x: os.path.basename(x) != "index.html"),
+	                        [os.path.join(directory, d)
+	                         for d in os.listdir(directory)])
 	for path in subdirectories:
 		if os.path.isdir(path):
 			setup_directory(path)
