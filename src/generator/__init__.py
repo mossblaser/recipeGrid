@@ -18,13 +18,14 @@ def parse_recipe_file(english, scale = None, serve = None):
 	serves = get_serves(title)
 	
 	# Update the title (if the quantities will be changed)
+	scaling = ""
 	if (scale is None or scale == 1) and (serve is None or serve == serves):
 		# Do nothing
 		pass
 	elif scale is not None:
-		title += " [Scaled by x%.1f]"%(float(scale))
+		scaling = "Scaled by x%.1f"%(float(scale))
 	elif serve is not None and serves is not None:
-		title += " [Scaled to serve %d]"%(float(serve))
+		scaling = "Scaled to serve %d"%(float(serve))
 	
 	# Modify the value of serves if it is not set to match the requested number of
 	# servings (so the ammounts aren't changed) or to one if the scale is
@@ -60,5 +61,5 @@ def parse_recipe_file(english, scale = None, serve = None):
 	# Generate the recipe from the english
 	substances = get_recipe(ingredients, eng_recipe)
 	
-	return title, description, substances
+	return title, scaling, description, substances
 

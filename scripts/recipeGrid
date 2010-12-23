@@ -41,13 +41,14 @@ if __name__=="__main__":
 	
 	english = open(args.filename, "r").read()
 	
-	title, description, recipe = parse_recipe_file(english,
-	                                               serve = args.serve,
-	                                               scale = args.scale)
+	title, scaling, description, recipe = parse_recipe_file(english,
+	                                                        serve = args.serve,
+	                                                        scale = args.scale)
 	
 	# Produce a table showing how I can produce both!
-	html = "<h1>%s</h1><p>%s</p>%s"%(
+	html = "<h1>%s</h1>%s<hr><p>%s</p>%s"%(
 		title,
+		"<span class=\"scaling\">%s</span>"%scaling if scaling else "",
 		"</p><p>".join(description.split("\n\n")),
 		results_to_table(recipe).html
 	)
