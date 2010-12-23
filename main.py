@@ -1,31 +1,18 @@
-from model import Substance, Quantity, Ingredient
 from view import results_to_html
 
-from generator import generate
+from generator import parse_recipe_file
 
 if __name__=="__main__":
-	recipe = generate(
-	"""
-	6 tsp cocoa powder
-	2 tbsp golden syrup
-	1/2 cup butter
-	1/2 cup sugar
-	16oz digestives
-	bar of chocolate
+	import sys
+	english = open(sys.argv[1], "r").read()
 	
-	eat(
-		hide(
-			cover(
-				mix(
-					heat until bubbling (cocoa powder, golden syrup, butter, sugar)
-					crush(digestives))
-				melt(bar of chocolate))))
-	""")
-	
-	print recipe
+	title, description, recipe = parse_recipe_file(english)
 	
 	# Produce a table showing how I can produce both!
 	html = results_to_html(recipe)
+	html = "<h1>%s</h1><p>%s</p>%s"%(
+		title,
+		"</p><p>".join(description.split("\n\n")),
+		html
+	)
 	print html
-	
-	open("out.html","w").write(html)

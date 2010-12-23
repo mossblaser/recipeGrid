@@ -55,6 +55,7 @@ class Row(list):
 		           filter((lambda c: c.height > num_rows), self))
 
 
+
 class Table(list):
 	
 	@property
@@ -77,6 +78,8 @@ def expand_rows(rows):
 		row[-1].width += max_width - width
 	
 	return rows
+
+
 
 def get_rows(substance):
 	if substance.components == []:

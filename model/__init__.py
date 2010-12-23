@@ -61,10 +61,9 @@ class Ingredient(Substance):
 	
 	@property
 	def description(self):
-		if self.quantity.unit == "" and self.quantity.ammount == 1:
-			return self.name
-		else:
-			return "%s of %s"%(str(self.quantity), self.name)
+		return "%s%s%s"%(str(self.quantity),
+		                  " " if self.quantity.unit == "" else " of ",
+		                  self.name)
 	
 	
 	def __len__(self):

@@ -80,9 +80,17 @@ def interpret_ingredient(english):
 
 
 
+# Split a list of ingredients in english into individual ingredients
+def split_eng_ingredients(english):
+	return filter(None, (s.strip() for s in
+	                     english.split("\n")))
+
+
+
+
 # Interpret an ingredient in english and return a tuple with the ingredient name
 # and a Substance object.
-def interpret(english):
+def interpret_single(english):
 	match = split_ingredient_preperation.match(english)
 	assert(match is not None)
 	
@@ -97,3 +105,16 @@ def interpret(english):
 	else:
 		return name, ingredient
 
+
+
+# Given a list of ingredients (in english) produce a model of the ingredients
+
+# list (with preperation steps added). A dictionary mapping the ingredient name
+# to the model is returned.
+def interpret(english):
+	# The ingredients dictionary should contain Substance objects refrenced by the
+	# engish of their root substance name.
+	ingredients = dict(map(interpret_single,
+	                       split_eng_ingredients(english)))
+	
+	return ingredients
