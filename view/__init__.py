@@ -17,7 +17,6 @@ class Cell(object):
 			self.height, self.width, self.text
 		)
 	
-	
 	def __repr__(self):
 		return "Cell(%s, %s, %s)"%(
 			repr(self.text), repr(self.height), repr(self.width)
@@ -102,15 +101,11 @@ def get_rows(substance):
 
 
 
-"""
-Draw a table containing the tree leading up to the resuts given in the list.
-"""
-def results_to_html(results):
+def results_to_table(results):
 	# Get the table for all results
 	rows = list(sum((get_rows(r) for r in results), Row()))
 	
 	# De-ragedize the end
 	rows = expand_rows(rows)
 	
-	table = Table(rows)
-	return table.html
+	return Table(rows)
