@@ -22,7 +22,7 @@ for servings in `seq 1 10`; do
 	subdir="/serves$servings/"
 	
 	find . -name "*.rec" | while read file; do
-		target_file="$TARGET$subdir$file"
+		target_file="$TARGET$subdir$file.html"
 		mkdir -p "$(dirname "$target_file")"
 		recipeGrid "$file" "$target_file" "$args"
 	done
