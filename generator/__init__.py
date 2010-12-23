@@ -17,8 +17,11 @@ def parse_recipe_file(english, scale = None, serve = None):
 	
 	serves = get_serves(title)
 	
-	# Update the title
-	if scale is not None:
+	# Update the title (if the quantities will be changed)
+	if (scale is None or scale == 1) and (serve is None or serve == serves):
+		# Do nothing
+		pass
+	elif scale is not None:
 		title += " [Scaled by x%.1f]"%(float(scale))
 	elif serve is not None and serves is not None:
 		title += " [Scaled to serve %d]"%(float(serve))

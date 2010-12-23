@@ -1,3 +1,4 @@
+#!/usr/bin/python
 
 from generator import parse_recipe_file
 from view      import results_to_table
@@ -12,6 +13,10 @@ def parse_args():
 	parser.add_argument("filename", type=str, nargs = "?",
 	                    default = "/dev/stdin",
 	                    help = "The filename to read the recipe from (or stdin if not supplied).")
+	
+	parser.add_argument("output", type=str, nargs = "?",
+	                    default = "/dev/stdout",
+	                    help = "The filename to write the html to (or stdout if not supplied).")
 	
 	group = parser.add_mutually_exclusive_group()
 	
@@ -30,6 +35,7 @@ def parse_args():
 	return parser.parse_args()
 
 
+
 if __name__=="__main__":
 	args = parse_args()
 	
@@ -45,4 +51,5 @@ if __name__=="__main__":
 		"</p><p>".join(description.split("\n\n")),
 		results_to_table(recipe).html
 	)
-	print html
+	
+	open(args.output, "w").write(html)
