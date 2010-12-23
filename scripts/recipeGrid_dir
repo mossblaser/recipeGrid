@@ -7,6 +7,11 @@
 SOURCE="$(readlink -f "$1")"
 TARGET="$(readlink -f "$2")"
 
+if [ -z "$SOURCE" -o - -z "$TARGET" ]; then
+	echo "Must supply a source and target directory."
+	exit 1
+fi
+
 cd "$SOURCE"
 
 # Empty the target directory...
