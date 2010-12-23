@@ -13,6 +13,6 @@ bar of chocolate
 
 cover(
 	mix(
-		heat until bubbling (cocoa powder, golden syrup, butter, sugar)
-		crush(digestives))
+		heat until bubbling (cocoa powder, golden syrup, butter, sugar),
+		crush(digestives)),
 	melt(bar of chocolate))
