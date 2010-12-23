@@ -87,14 +87,15 @@ def setup_directory(directory):
 		else:
 			theme_page(path)
 	
-	subdirectory_titles = map(camel_case_to_sentence_case, subdirectories)
+	subdirectory_titles = map(camel_case_to_sentence_case,
+	                          map(os.path.basename, subdirectories))
 	
 	template = open(os.path.join("./templates", "categories.html"), "r").read()
 	pre, link, post = template.split("!!")
 	
 	html = "%s%s%s"%(
 		pre,
-		"".join(link.replace("#link", location).replace("#label", title)
+		"".join(link.replace("#link", os.path.basename(location)).replace("#label", title)
 		        for location, title in zip(subdirectories, subdirectory_titles)),
 		post
 	)
