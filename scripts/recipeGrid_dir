@@ -24,6 +24,6 @@ for servings in `seq 1 10`; do
 	find . -name "*.rec" | while read file; do
 		target_file="$TARGET$subdir$file"
 		mkdir -p "$(dirname "$target_file")"
-		recipeGrid.py "$file" "$target_file" "$args"
+		recipeGrid "$file" "$target_file" "$args"
 	done
 done
