@@ -83,3 +83,17 @@ Steps are simply nested in the form::
 
 These steps can be nested arbitarily deep. You should refer to your ingredients
 at the deepest levels.
+
+recipeGrid_dir
+==============
+
+A tool which takes two arguments, a source directory and destination directory.
+The destination directory tree is emptied (so don't put anything important
+there) and then filled with HTML versions of the recipies in the first
+directory.
+
+icing
+=====
+
+Takes a template directory (one is included in `icing_template`) and a directory
+produced by `recipeGrid_dir` and prettifies it.

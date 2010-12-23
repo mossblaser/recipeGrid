@@ -14,9 +14,10 @@ static_resources = [
 ]
 
 
-def setup_root(directory):
+
+def setup_root(template_dir, directory):
 	for resource in static_resources:
-		source = os.path.join("./templates", resource)
+		source = os.path.join(template_dir, resource)
 		target = os.path.join(directory, resource)
 		target_dir = os.path.dirname(target)
 		
@@ -40,7 +41,7 @@ def setup_root(directory):
 	                           os.listdir(directory))))
 	servings.sort()
 	
-	template  = open(os.path.join("./templates", "index.html"), "r").read()
+	template  = open(os.path.join(template_dir, "index.html"), "r").read()
 	index_filename = os.path.join(directory, "index.html")
 	
 	pre, list_elem, post = template.split("!!")
@@ -58,13 +59,14 @@ def setup_root(directory):
 
 
 
-def theme_page(page):
+def theme_page(template_dir, page):
 	body = open(page, "r").read()
 	
-	pre, post = open(os.path.join("./templates", "recipe.html"),
+	pre, post = open(os.path.join(template_dir, "recipe.html"),
 	                 "r").read().split("!!")
 	
 	open(page, "w").write(pre + body + post)
+
 
 
 def camel_case_to_sentence_case(string):
@@ -79,20 +81,20 @@ def camel_case_to_sentence_case(string):
 
 
 
-def setup_directory(directory):
+def setup_directory(template_dir, directory):
 	subdirectories = filter((lambda x: os.path.basename(x) != "index.html"),
 	                        [os.path.join(directory, d)
 	                         for d in os.listdir(directory)])
 	for path in subdirectories:
 		if os.path.isdir(path):
-			setup_directory(path)
+			setup_directory(template_dir, path)
 		else:
-			theme_page(path)
+			theme_page(template_dir, path)
 	
 	subdirectory_titles = map(camel_case_to_sentence_case,
 	                          map(os.path.basename, subdirectories))
 	
-	template = open(os.path.join("./templates", "categories.html"), "r").read()
+	template = open(os.path.join(template_dir, "categories.html"), "r").read()
 	pre, link, post = template.split("!!")
 	
 	html = "%s%s%s"%(
@@ -108,8 +110,9 @@ def setup_directory(directory):
 
 if __name__=="__main__":
 	import sys
-	directory = sys.argv[1]
+	template_dir = sys.argv[1]
+	directory = sys.argv[2]
 	
-	subdirectories = setup_root(directory)
+	subdirectories = setup_root(template_dir, directory)
 	for directory in subdirectories:
-		setup_directory(directory)
+		setup_directory(template_dir, directory)
