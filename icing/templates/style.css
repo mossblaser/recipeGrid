@@ -1,0 +1,284 @@
+@font-face {
+  font-family : "Adobe Jenson Pro";
+  font-style  : normal;
+  font-weight : normal;
+  src         : url("fonts/ajpr.otf");
+}
+@font-face {
+  font-family : "Adobe Jenson Pro";
+  font-style  : normal;
+  font-weight : bold;
+  src         : url("fonts/ajpb.otf");
+}
+@font-face {
+  font-family : "Adobe Jenson Pro";
+  font-style  : italic;
+  font-weight : normal;
+  src         : url("fonts/ajpi.otf");
+}
+
+
+body {
+	background-image : url("images/bg.png");
+	background-repeat : no-repeat;
+	background-position : top center;
+	background-color : #e9b96e;
+	
+	margin  : 0;
+	padding : 0;
+	
+	text-align : center;
+	
+	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-size : 11pt;
+	font-weight : normal;
+	font-style : normal;
+	color : #c17d11;
+}
+
+
+a {
+	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	text-decoration : none;
+	font-weight : normal;
+	font-style : italic;
+	color : #5a3800;
+}
+
+
+a:hover {
+	text-decoration : underline;
+}
+
+
+code {
+	font-family : Monaco, monospace;
+	font-size : 8pt;
+	font-weight : normal;
+	font-style : normal;
+	color : #c17d11;
+}
+
+
+div#logo {
+	background-image : url("images/bosspot.png");
+	background-repeat : no-repeat;
+	background-position : top center;
+	
+	margin-top : 25px;
+	padding-top : 105px;
+}
+
+
+h1 {
+	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-size : 26pt;
+	font-weight : bold;
+	font-style : normal;
+	color : #5a3800;
+	
+	margin : 0;
+	padding : 0;
+	
+	margin-top : 30px;
+}
+
+#logo h1 {
+	margin : 0;
+	padding : 0;
+}
+
+
+#logo span {
+	display : block;
+	
+	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-size : 15pt;
+	font-weight : normal;
+	font-style : italic;
+	color : #5a3800;
+	
+	margin : 0;
+	padding : 0;
+	margin-top : 13px;
+}
+
+
+hr {
+	background-image : url("images/twiddle.png");
+	background-repeat : no-repeat;
+	background-position : top center;
+	
+	padding : 0;
+	margin : 0;
+	margin-top    : 25px;
+	margin-bottom : 30px;
+	
+	height : 8px;
+	
+	border-style : none;
+	border-color : #e9b96e;
+	border-width : 0;
+}
+
+
+#logo hr {
+	padding : 0;
+	margin : 0;
+}
+
+
+div.callout {
+	width : 375px;
+	
+	margin : 0;
+	padding : 0;
+	
+	margin-top    : 30px;
+	margin-bottom : 30px;
+	
+	padding-top    : 12px;
+	padding-bottom :  7px;
+	
+	padding-left  : 15px;
+	padding-right : 15px;
+	
+	border-top-color : #c17d11;
+	border-top-width : 1px;
+	border-top-style : solid;
+	
+	border-bottom-color : #c17d11;
+	border-bottom-width : 1px;
+	border-bottom-style : solid;
+	
+	margin-left : auto;
+	margin-right : auto;
+	
+	color : #8f5902;
+}
+
+
+div#servings {
+	font-style : italic;
+	font-size : 15pt;
+	color : #8f5902;
+}
+
+
+div#servings ul {
+	margin : 0;
+	padding : 0;
+	margin-top : 13px;
+	margin-bottom : 7px;
+}
+
+
+div#servings ul li {
+	margin : 0;
+	padding : 0;
+	display : inline;
+}
+
+
+div#servings ul li a {
+	display : inline-block;
+	
+	color : #5a3800;
+	text-decoration : none;
+	font-weight : bold;
+	font-style : normal;
+	
+	font-size : 22pt;
+	margin : 0;
+	padding : 0;
+	padding-left : 15px;
+	padding-right : 15px;
+}
+
+
+div#categories {
+	font-style : italic;
+	font-size : 15pt;
+	color : #8f5902;
+}
+
+
+div#categories ul {
+	margin : 0;
+	padding : 0;
+	margin-top : 13px;
+	margin-bottom : 7px;
+}
+
+
+div#categories ul li {
+	margin : 0;
+	padding : 0;
+	margin-bottom : 5px;
+	list-style-type : none;
+}
+
+
+div#categories ul li a {
+	display : inline-block;
+	
+	color : #5a3800;
+	text-decoration : none;
+	font-weight : bold;
+	font-style : normal;
+	
+	font-size : 22pt;
+	margin : 0;
+	padding : 0;
+}
+
+
+span.scaling {
+	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-size : 14pt;
+	font-weight : normal;
+	font-style : italic;
+	color : #5a3800;
+	
+	margin : 0;
+	padding : 0;
+}
+
+
+p {
+	width : 470px;
+	text-align : justify;
+	
+	margin-left : auto;
+	margin-right : auto;
+	
+	color : #8f5902;
+}
+
+
+table {
+	margin-left : auto;
+	margin-right : auto;
+	margin-top : 35px;
+	
+	border-style : none;
+	border-width : 0;
+	border-color : #8f5902;
+	
+	border-spacing : 0;
+	border-collapse : collapse;
+}
+
+table tr td {
+	text-align : left;
+	
+	color : #5a3800;
+	
+	margin : 0;
+	padding : 0;
+	
+	padding-left  : 10px;
+	padding-right : 10px;
+	padding-top   : 3px;
+	padding-bottom: 3px;
+}
