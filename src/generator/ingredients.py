@@ -33,7 +33,8 @@ units = {
 	"tbsp"  : ["tbsp", "tbsps", "tablespoon", "tablespoons", "table spoon", "table spoons"],
 	"clove" : ["clove", "cloves"],
 	"pint"  : ["pint", "pints"],
-	"can"   : ["can"],
+	"can"   : ["can", "tin", "cans", "tins"],
+	"sachet": ["sachet", "sachets"]
 }
 
 unit_regex = "(%s)"%("|".join(sum(units.itervalues(), [])))
