@@ -4,9 +4,6 @@ import re
 import os, shutil, os.path
 
 static_resources = [
-	"fonts/ajpr.otf",
-	"fonts/ajpb.otf",
-	"fonts/ajpi.otf",
 	"images/bg.png",
 	"images/bosspot.png",
 	"images/twiddle.png",

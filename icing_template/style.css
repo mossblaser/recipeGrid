@@ -1,22 +1,4 @@
-@font-face {
-  font-family : "Adobe Jenson Pro";
-  font-style  : normal;
-  font-weight : normal;
-  src         : url("fonts/ajpr.otf");
-}
-@font-face {
-  font-family : "Adobe Jenson Pro";
-  font-style  : normal;
-  font-weight : bold;
-  src         : url("fonts/ajpb.otf");
-}
-@font-face {
-  font-family : "Adobe Jenson Pro";
-  font-style  : italic;
-  font-weight : normal;
-  src         : url("fonts/ajpi.otf");
-}
-
+@import url(http://fonts.googleapis.com/css?family=Donegal+One);
 
 body {
 	background-image : url("images/bg.png");
@@ -29,7 +11,7 @@ body {
 	
 	text-align : center;
 	
-	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-family : "Donegal One", "DejaVu Serif", "Times New Roman", Times, serif;
 	font-size : 11pt;
 	font-weight : normal;
 	font-style : normal;
@@ -38,7 +20,7 @@ body {
 
 
 a {
-	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-family : "Donegal One", "DejaVu Serif", "Times New Roman", Times, serif;
 	text-decoration : none;
 	font-weight : normal;
 	font-style : italic;
@@ -71,7 +53,7 @@ div#logo {
 
 
 h1 {
-	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-family : "Donegal One", "DejaVu Serif", "Times New Roman", Times, serif;
 	font-size : 26pt;
 	font-weight : bold;
 	font-style : normal;
@@ -92,7 +74,7 @@ h1 {
 #logo span {
 	display : block;
 	
-	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-family : "Donegal One", "DejaVu Serif", "Times New Roman", Times, serif;
 	font-size : 15pt;
 	font-weight : normal;
 	font-style : italic;
@@ -234,7 +216,7 @@ div#categories ul li a {
 
 
 span.scaling {
-	font-family : "Adobe Jenson Pro", "DejaVu Serif", "Times New Roman", Times, serif;
+	font-family : "Donegal One", "DejaVu Serif", "Times New Roman", Times, serif;
 	font-size : 14pt;
 	font-weight : normal;
 	font-style : italic;
