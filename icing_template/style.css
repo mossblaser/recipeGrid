@@ -28,6 +28,18 @@ a {
 }
 
 
+a:focus,
+a:active {
+	outline : 0;
+	color : #e9b96e;
+	background-color : #5a3800;
+
+	   -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	        border-radius: 4px;
+}
+
+
 a:hover {
 	text-decoration : underline;
 }
@@ -165,7 +177,6 @@ div#servings ul li {
 div#servings ul li a {
 	display : inline-block;
 	
-	color : #5a3800;
 	text-decoration : none;
 	font-weight : bold;
 	font-style : normal;
@@ -204,7 +215,6 @@ div#categories ul li {
 div#categories ul li a {
 	display : inline-block;
 	
-	color : #5a3800;
 	text-decoration : none;
 	font-weight : bold;
 	font-style : normal;
