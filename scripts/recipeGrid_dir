@@ -7,6 +7,9 @@
 SOURCE="$(readlink -f "$1")"
 TARGET="$(readlink -f "$2")"
 
+MIN_SERVINGS=1
+MAX_SERVINGS=10
+
 if [ -z "$SOURCE" ] || [ -z "$TARGET" ]; then
 	echo "Must supply a source and target directory."
 	exit 1
@@ -17,9 +20,13 @@ cd "$SOURCE"
 # Empty the target directory...
 rm -rf "$TARGET"
 
-for servings in `seq 1 10`; do
+echo $MAX_SERVINGS
+
+for servings in `seq $MIN_SERVINGS $MAX_SERVINGS`; do
 	args="-s $servings"
 	subdir="/serves$servings/"
+	
+	echo $servings
 	
 	find . -name "*.rec" | while read file; do
 		target_file="$TARGET$subdir$file.html"
