@@ -26,6 +26,7 @@ def setup_root(template_dir, directory):
 		
 		try:
 			shutil.copyfile(source, target)
+			shutil.copystat(source, target)
 		except OSError:
 			# The file already exists, problem solved!
 			pass
