@@ -31,6 +31,8 @@ for servings in `seq $MIN_SERVINGS $MAX_SERVINGS`; do
 	find . -name "*.rec" | while read file; do
 		target_file="$TARGET$subdir$file.html"
 		mkdir -p "$(dirname "$target_file")"
-		recipeGrid "$file" "$target_file" "$args"
+		recipeGrid "$file" "$target_file" "$args" &
 	done
+	
+	wait
 done
