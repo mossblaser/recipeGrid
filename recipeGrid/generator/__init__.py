@@ -9,7 +9,7 @@ from recipeGrid.generator.serves      import interpret as get_serves
 
 
 def parse_recipe_file(english, scale = None, serve = None):
-	sections = filter(None, map(str.strip, english.strip().split("\n\n")))
+	sections = list(filter(None, map(str.strip, english.strip().split("\n\n"))))
 	assert(len(sections) >= 3)
 	
 	# The title should be the first section

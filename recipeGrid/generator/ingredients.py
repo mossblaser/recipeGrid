@@ -37,7 +37,7 @@ units = {
 	"sachet": ["sachet", "sachets"]
 }
 
-unit_regex = "(%s)"%("|".join(sum(units.itervalues(), [])))
+unit_regex = "(%s)"%("|".join(sum(units.values(), [])))
 
 # A regex which matches joining phrases between ammounts/units and the
 # ingredient
