@@ -1,13 +1,9 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
 	name = "recipeGrid",
 	version = "0.1",
-	package_dir = {"recipeGrid" : "src"},
-	packages = ["recipeGrid",
-	            "recipeGrid.model",
-	            "recipeGrid.view",
-	            "recipeGrid.generator"],
+	packages = find_packages(),
 	scripts = ["scripts/recipeGrid",
 	           "scripts/recipeGrid_dir",
 	           "scripts/icing"],
