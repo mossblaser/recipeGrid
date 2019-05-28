@@ -43,7 +43,8 @@ def parse_recipe_file(english, scale = None, serve = None):
 	def alter_ammonts(ingredient):
 		if ingredient.components != []:
 			# If this is a substance, try on the subcomponents
-			map(alter_ammonts, ingredient.components)
+			for ingredient in ingredient.components:
+				alter_ammonts(ingredient)
 		else:
 			try:
 				ingredient.quantity.ammount = (
@@ -56,7 +57,8 @@ def parse_recipe_file(english, scale = None, serve = None):
 			except AttributeError:
 				# This is not an ingredient, do nothing
 				pass
-	map(alter_ammonts, ingredients.values())
+	for ingredient in ingredients.values():
+		alter_ammonts(ingredient)
 	
 	# Generate the recipe from the english
 	substances = get_recipe(ingredients, eng_recipe)
