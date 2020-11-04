@@ -1,3 +1,14 @@
+DEPRECATED: Use Recipe Grid 2 instead
+=====================================
+
+This repository contains the original recipeGrid software which served the 18sg
+Cook Book honourably for a few weeks short of ten years. In late 2020, `Recipe
+Grid 2 <https://github.com/mossblaser/recipe_grid>`_ was released representing
+a substantial overhaul of this remarkably long-lived 'hack'. This repository
+remains for archival purposes only.
+
+`Go to Recipe Grid 2 <https://github.com/mossblaser/recipe_grid>`_
+
 Recipe Grid
 ===========
 
